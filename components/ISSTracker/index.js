@@ -13,9 +13,8 @@ export default function ISSTracker() {
   } = useSWR(URL, {
     refreshInterval: 5000,
   });
-  console.log("what are you?", coords);
-  if (error) return <div>Shit happened</div>;
-  if (coords === undefined) return <div>Still loading</div>;
+  if (error) return <div>ISS crashed</div>;
+  if (coords === undefined) return <div>ISS still in outer space…</div>;
   return (
     <main>
       <Map longitude={coords.longitude} latitude={coords.latitude} />
